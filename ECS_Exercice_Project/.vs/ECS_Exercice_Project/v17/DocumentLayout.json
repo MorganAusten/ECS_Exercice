@@ -1,0 +1,141 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\Entity\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|solutionrelative:Entity\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\System\\System.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|solutionrelative:System\\System.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\ECS_Exercice_Project.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|solutionrelative:ECS_Exercice_Project.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\System\\System.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|solutionrelative:System\\System.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\Entity\\AllScripts.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|solutionrelative:Entity\\AllScripts.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\Entity\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|solutionrelative:Entity\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\Component\\Component.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FAD31F5D-2165-401C-B4DD-6C02C3860661}|ECS_Exercice_Project.vcxproj|solutionrelative:Component\\Component.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AllScripts.txt",
+              "DocumentMoniker": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\Entity\\AllScripts.txt",
+              "RelativeDocumentMoniker": "Entity\\AllScripts.txt",
+              "ToolTip": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\Entity\\AllScripts.txt",
+              "RelativeToolTip": "Entity\\AllScripts.txt",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAABIAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-04T17:19:43.156Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "System.h",
+              "DocumentMoniker": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\System\\System.h",
+              "RelativeDocumentMoniker": "System\\System.h",
+              "ToolTip": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\System\\System.h",
+              "RelativeToolTip": "System\\System.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-04T12:31:19.548Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "System.cpp",
+              "DocumentMoniker": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\System\\System.cpp",
+              "RelativeDocumentMoniker": "System\\System.cpp",
+              "ToolTip": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\System\\System.cpp",
+              "RelativeToolTip": "System\\System.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-04T12:31:34.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Component.h",
+              "DocumentMoniker": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\Component\\Component.h",
+              "RelativeDocumentMoniker": "Component\\Component.h",
+              "ToolTip": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\Component\\Component.h",
+              "RelativeToolTip": "Component\\Component.h",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAYwDMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-04T11:26:26.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Entity.h",
+              "DocumentMoniker": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\Entity\\Entity.h",
+              "RelativeDocumentMoniker": "Entity\\Entity.h",
+              "ToolTip": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\Entity\\Entity.h",
+              "RelativeToolTip": "Entity\\Entity.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-04T11:14:52.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Entity.cpp",
+              "DocumentMoniker": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\Entity\\Entity.cpp",
+              "RelativeDocumentMoniker": "Entity\\Entity.cpp",
+              "ToolTip": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\Entity\\Entity.cpp",
+              "RelativeToolTip": "Entity\\Entity.cpp",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAADMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-04T11:15:24.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ECS_Exercice_Project.cpp",
+              "DocumentMoniker": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\ECS_Exercice_Project.cpp",
+              "RelativeDocumentMoniker": "ECS_Exercice_Project.cpp",
+              "ToolTip": "D:\\GitHub\\ECS_Exercice\\ECS_Exercice_Project\\ECS_Exercice_Project.cpp",
+              "RelativeToolTip": "ECS_Exercice_Project.cpp",
+              "ViewState": "AQIAABwAAAAAAAAAAAAYwDUAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-04T11:09:57.154Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

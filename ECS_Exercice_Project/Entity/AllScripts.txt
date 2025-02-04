@@ -1,0 +1,298 @@
+#pragma once
+#include <iostream>
+#include <vector>
+#include "../Entity/Entity.h"
+using namespace std;
+
+class System
+{
+#pragma region Vars
+private:
+	vector<Entity*> entitys;
+#pragma endregion Vars
+#pragma region Constructor/Destructor
+public:
+	System() {}
+	System(vector<Entity*> _entitys);
+	~System();
+#pragma endregion Constructor/Destructor
+#pragma region Methods
+public:
+	inline void AddEntity(Entity* _entity) { entitys.push_back(_entity); }
+	inline void AddEntitys(const vector<Entity*>& _entitys) { for (int i = 0 ; i <= _entitys.size(); i++)	entitys.push_back(_entitys[i]); }
+	inline void RemoveEntity(Entity* _entity) {	entitys.erase(std::remove_if(entitys.begin(), entitys.end(), [_entity](Entity* e) { return e == _entity; }), entitys.end());}
+	inline void RemoveAllEntitys() { entitys.clear(); }
+	void StartSystem();
+private:
+	void Update();
+#pragma endregion Methods
+#pragma region Operators
+
+public:
+	void operator+=(Entity* _entity)		{	AddEntity(_entity);}
+	void operator-=(Entity* _entity)		{	RemoveEntity(_entity);}
+#pragma endregion Operators
+}; 
+
+#include "System.h"
+#include <chrono>
+#include <thread>
+using namespace std::chrono;
+
+System::System(vector<Entity*> _entitys)
+{
+	entitys = _entitys;
+}
+
+System::~System()
+{
+	for (Entity* _entity : entitys)
+		delete _entity;
+	entitys.clear();
+}
+
+void System::StartSystem()
+{
+	int _iteration = 0;
+	while (true)
+	{
+		cout << "----Iteration : " << _iteration << " ------" << endl;
+		Update();
+		++_iteration;
+		std::this_thread::sleep_for(seconds(1));
+	}
+}
+
+void System::Update()
+{
+	for (Entity* _entity : entitys)
+	{
+		_entity->UpdatePosition();
+	}
+}
+
+
+#pragma once
+#include <iostream>
+using namespace std;
+
+class Component
+{
+protected:
+	string name = "";
+public:
+	virtual ~Component() {}
+	inline string GetName()const { return name; }
+};
+
+struct Position :public Component
+{
+	int x = 0;
+	int y = 0;
+
+	Position(const int _x, const int _y)
+	{
+		name = "Position";
+		x = _x;
+		y = _y;
+	}
+	Position(const int _x)
+	{
+		name = "Position";
+		x = _x;
+		y = x;
+	}
+};
+
+struct Speed :public Component
+{
+	int xSpeed = 0;
+	int ySpeed = 0;
+
+	Speed(const int _xSpeed, const int _ySpeed)
+	{
+		name = "Speed";
+		xSpeed = _xSpeed;
+		ySpeed = _ySpeed;
+	}
+
+	Speed(const int _speed)
+	{
+		name = "Speed";
+		xSpeed = _speed;
+		ySpeed = xSpeed;
+	}
+};
+
+
+#pragma once 
+#include <iostream>
+#include <vector>
+#include "../Component/Component.h"
+using namespace std;
+
+class Entity
+{
+#pragma region Vars
+private:
+	int id;
+	string name;
+	vector<Component*> components;
+#pragma endregion Vars
+public:
+	Entity(const int _id, const string& _name);
+	Entity(const int _id, const string& _name, const vector<Component*>& _components);
+	virtual ~Entity();
+public:
+	inline const int GetId()const { return id; }
+	inline const string& GetName()const { return name; }
+	inline void AddComponent(Component* _component) { components.push_back(_component); }
+	inline void AddComponents(std::vector<Component*> _components) { for (Component* _component : _components) components.push_back(_component); }
+	void UpdatePosition();
+private:
+	Position* GetPositionComponent();
+	Speed* GetSpeedComponent();
+	bool HasComponents();
+};
+
+#include "Entity.h"
+
+Entity::Entity(int _id, const string& _name)
+{
+	id = _id;
+	name = _name;
+}
+
+Entity::Entity(int _id, const string& _name, const vector<Component*>& _components)
+{
+	id = _id;
+	name = _name;
+	components = _components;
+}
+
+Entity::~Entity()
+{
+	for (Component* _component : components)
+		delete _component;
+	components.clear();
+}
+
+void Entity::UpdatePosition()
+{
+	Position* _position = GetPositionComponent();
+	Speed* _speed = GetSpeedComponent();
+
+	if (_speed == nullptr || _position == nullptr)
+		return;
+
+	_position->x += _speed->xSpeed;
+	_position->y += _speed->ySpeed;
+
+	cout << "Position -> x: " << _position->x << "   y: " << _position->y << endl;
+}
+
+#pragma region Components
+Position* Entity::GetPositionComponent()
+{
+	if (!HasComponents())
+		return nullptr;
+
+	for (Component*& _component : components)
+		if (Position* _position = dynamic_cast<Position*>(_component))
+			return _position;
+
+	cout << name + "has no Position component" << endl;
+	return nullptr;
+}
+
+Speed* Entity::GetSpeedComponent()
+{
+	if (!HasComponents())
+		return nullptr;
+
+	for (Component*& _component : components)
+		if (Speed* _speed = dynamic_cast<Speed*>(_component))
+			return _speed;
+
+	cout << name + "has no Speed component" << endl;
+	return nullptr;
+}
+
+bool Entity::HasComponents()
+{
+	if (components.empty())
+	{
+		cout << name + "has no components" << endl;
+		return false;
+	}
+	return true;
+}
+#pragma endregion Components
+
+
+#include <iostream>
+#include "System/System.h"
+
+//	Objectif:
+//	Implémente un mini ECS en C++ qui :
+//
+//	Crée plusieurs entités(ex : joueur, ennemis, projectiles).
+//	Leur assigne des composants(Position, Vitesse).
+//	Ajoute un système qui met à jour leurs positions en fonction de leur vitesse.
+//	Affiche la position des entités à chaque itération.
+// 
+//	Règles :
+//	Une entité est juste un ID unique.
+//	Un composant est une structure contenant uniquement des données.
+//	Un système applique des modifications aux entités qui possèdent certains composants.
+// 
+//	Étapes à suivre :
+//	Créer une classe ECS pour gérer les entités et les composants.
+//	Définir deux composants : Position(x, y) et Velocity(vx, vy).
+//	Créer un système qui met à jour les positions.
+//	Simuler plusieurs frames et afficher l'évolution des entités.
+// 
+//	Contraintes :
+//	Tu dois utiliser std::unordered_map ou std::vector pour stocker les composants.
+//	Tu dois gérer au moins 3 entités avec des vitesses différentes.
+//	La simulation doit afficher au moins 5 itérations.
+// 
+//	Exemple de sortie attendue :
+//
+//	Iteration 1 :
+//	Entity 0->Position : (2, 3)
+//	Entity 1->Position : (9, 5)
+//	Entity 2->Position : (4, -2)
+//	----------------------
+//	Iteration 2 :
+//	Entity 0->Position : (4, 6)
+//	Entity 1->Position : (8, 5)
+//	Entity 2->Position : (8, -4)
+//	----------------------
+//	...
+// 
+// 
+//  Une fois terminé, assure - toi que :
+//
+//	Toutes les entités se déplacent correctement en fonction de leur vitesse.
+//	Le programme fonctionne sans erreur et affiche bien les mises à jour.
+
+
+int main()
+{
+	Entity* _player = new Entity(0, "Player", {new Position(10,10), new Speed(2)});
+	Entity* _deadDoggo = new Entity(1, "DeadDoggo");
+	Entity* _mom = new Entity(2, "Mom");
+	Entity* _dad = new Entity(3, "Dad");
+	Entity* _bro = new Entity(4, "Bro");
+
+	//Juste pour tester
+	_deadDoggo->AddComponent( new Position(10,10));
+	_mom->AddComponents({ new Position(47,26), new Speed(2,5)});
+	_dad->AddComponents({ new Position(580,-90),new Speed(-1,1) });
+	_bro->AddComponents({ new Position(25,1221),new Speed(4,-1) });
+
+	System _system = System(vector<Entity*>({ _player, _deadDoggo, _mom, _dad, _bro }));
+	_system.StartSystem();
+}
+
